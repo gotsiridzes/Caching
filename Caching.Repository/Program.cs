@@ -30,11 +30,10 @@ app.MapGet("/weatherforecast", async (IDistributedCache cache) =>
 	var key = $"WeatherForecast_{DateTime.Now.Date.ToString("yyyyMMdd_hhmm")}";
 	var forecast = await cache.GetRecordAsync<WeatherForecast[]>(key);
 
-	if (forecast is null)
-	{
-		forecast = ListWeatherForecast();
-		await cache.SetRecordAsync(key, forecast);
-	}
+	if (forecast is not null) return forecast;
+
+	forecast = ListWeatherForecast();
+	await cache.SetRecordAsync(key, forecast);
 
 	return forecast;
 })
