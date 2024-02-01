@@ -70,7 +70,7 @@ GetRecordAsync<T>: This method retrieves a serialized data object of type T from
 
 ### Initialize the web application and configure Redis cache
 
-```
+```csharp
 using System.Reflection;
 using Caching.Repository.Extensions;
 using Microsoft.Extensions.Caching.Distributed;
