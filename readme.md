@@ -15,18 +15,18 @@ docker exec -it redis1 sh
 ```
 Once inside the container, type redis-cli to access the Redis command-line interface.
 
-![Screenshot](screenshot-docker-exec.png)
+![Screenshot](.pics/screenshot-docker-exec.png)
 
 Upon starting the Redis instance, the cache is initially empty.
 
-![Screenshot](screenshot-nothing-in-cache.png)
+![Screenshot](.pics/screenshot-nothing-in-cache.png)
 
 ## Performance Analysis
 ### Cold start time, about 46ms
-![Screenshot](screenshot-cold-start.png)
+![Screenshot](.pics/screenshot-cold-start.png)
 
 ### Cached request time, about 4ms
-![Screenshot](screenshot-from-cache.png)
+![Screenshot](.pics/screenshot-from-cache.png)
 
 ## Code snippets
 This code snippet demonstrates how to integrate Redis caching into a .NET application using the StackExchange.Redis package. It sets up a distributed cache with Redis and utilizes it to cache weather forecast data.
